@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autos Premium · Lima, Perú</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-brand">Autos Premium</div>
+    <nav class="site-nav">
+      <a href="#autos">Autos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="header-phone" href="tel:+51969645758">+51 969 645 758</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-label">Lima · Autos Premium</span>
+        <h1>Conduce un auto de lujo diseñado para destacar.</h1>
+        <p>Vehículos exclusivos seleccionados en perfecto estado, con atención personalizada y entrega rápida.</p>
+        <div class="hero-buttons">
+          <a href="tel:+51969645758" class="button button-primary">Consultar disponibilidad</a>
+          <a href="#autos" class="button button-secondary">Ver auto destacado</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (5).jpeg" alt="BMW X2 xDrive20i">
+          <div class="hero-card-text">
+            <span>BMW X2 xDrive20i · 2024</span>
+            <strong>Mocha · M Sport · 204 CV</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="autos" class="featured-car">
+      <div class="section-intro">
+        <span class="section-tag">Auto destacado</span>
+        <h2>BMW X2 xDrive20i</h2>
+        <p>El SUV premium perfecto para conducción urbana y largos viajes, con tecnología BMW, diseño elegante y máxima presencia.</p>
+      </div>
+
+      <div class="featured-grid">
+        <div class="gallery-card">
+          <img class="gallery-main" id="main1" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (5).jpeg" alt="Auto destacado">
+          <div class="gallery-thumbs">
+            <img class="thumb active" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (5).jpeg" onclick="setMain('main1', this)" alt="Miniatura 1">
+            <img class="thumb" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (4).jpeg" onclick="setMain('main1', this)" alt="Miniatura 2">
+            <img class="thumb" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (3).jpeg" onclick="setMain('main1', this)" alt="Miniatura 3">
+            <img class="thumb" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (2).jpeg" onclick="setMain('main1', this)" alt="Miniatura 4">
+            <img class="thumb" src="carros/WhatsApp Image 2026-06-11 at 5.44.44 PM (1).jpeg" onclick="setMain('main1', this)" alt="Miniatura 5">
+          </div>
+        </div>
+
+        <div class="details-card">
+          <div class="car-brand">BMW · 2024</div>
+          <h3 class="car-name">X2 xDrive20i M Sport</h3>
+          <p class="car-variant">Mocha · 204 CV · Automática 7 vel.</p>
+
+          <div class="price-block">
+            <div>
+              <span class="price-label">Precio de venta</span>
+              <div class="price-value"><span class="price-currency">S/</span>189,900</div>
+            </div>
+            <div class="price-note">Precio negociable · Financiamiento disponible</div>
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec-item"><span class="spec-label">Motor</span><strong>2.0L TwinPower Turbo</strong></div>
+            <div class="spec-item"><span class="spec-label">Tracción</span><strong>xDrive AWD</strong></div>
+            <div class="spec-item"><span class="spec-label">Potencia</span><strong>204 CV</strong></div>
+            <div class="spec-item"><span class="spec-label">Transmisión</span><strong>Automática 7 vel.</strong></div>
+            <div class="spec-item"><span class="spec-label">Color</span><strong>Mocha / Arena</strong></div>
+            <div class="spec-item"><span class="spec-label">Año</span><strong>2024</strong></div>
+          </div>
+
+          <ul class="features-list">
+            <li>Pantalla curva BMW Curved Display 10.25"</li>
+            <li>Sistema Harmon Kardon premium</li>
+            <li>Asientos de cuero con costuras diamante</li>
+            <li>Techo panorámico corredizo</li>
+            <li>Aros Michelin 19" bicolor</li>
+            <li>Navegación con Apple CarPlay</li>
+            <li>Sensores delanteros y traseros</li>
+          </ul>
+
+          <a href="tel:+51969645758" class="cta-btn">📞 Consultar disponibilidad</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact-section">
+      <div class="contact-wrapper">
+        <div>
+          <span class="contact-label">Atención directa</span>
+          <h2 class="contact-title">Hablemos ahora</h2>
+          <p class="contact-sub">Respondemos todas las consultas y coordinamos tu prueba de manejo en Lima.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+51969645758" class="contact-phone"><span>📞</span> 969 645 758</a>
+          <div class="contact-options">
+            <a href="https://wa.me/51969645758" target="_blank">💬 WhatsApp</a>
+            <a href="tel:+51969645758">📱 Llamar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 · Autos Premium · Lima, Perú · Todos los precios incluyen IGV</p>
+  </footer>
+</body>
+</html>
