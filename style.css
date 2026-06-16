@@ -81,15 +81,31 @@ textarea {
   color: var(--white);
 }
 
-.header-phone {
+.header-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.75rem 1.15rem;
-  border: 1px solid rgba(201,168,76,0.55);
+  gap: 0.75rem;
+  padding: 0.75rem 1.2rem;
   border-radius: 999px;
-  background: rgba(201,168,76,0.08);
+  background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--sand);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 16px 35px rgba(0,0,0,0.15);
+}
+
+.badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
   color: var(--gold);
-  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 main {
@@ -153,11 +169,26 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+
+.button:hover::before {
+  opacity: 1;
 }
 
 .button-primary {
@@ -462,31 +493,58 @@ main {
   justify-items: end;
 }
 
-.contact-phone {
+.contact-pulse {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  background: var(--gold);
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.95), rgba(255,255,255,0.12));
   color: var(--charcoal);
-  border-radius: 999px;
-  padding: 1rem 1.5rem;
   font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 0 rgba(201,168,76,0.25);
+  animation: pulse-glow 2.5s ease-in-out infinite alternate;
 }
 
-.contact-options {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: end;
+.contact-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.35), transparent 35%);
+  opacity: 0.35;
+  pointer-events: none;
 }
 
-.contact-options a {
-  padding: 0.9rem 1.25rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.05);
-  color: var(--sand);
-  font-size: 0.9rem;
+.contact-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 35%);
+  animation: shimmer 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 12px rgba(201,168,76,0.2); transform: translateY(0); }
+  to { box-shadow: 0 0 25px rgba(201,168,76,0.35); transform: translateY(-2px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translate(-100%, -50%) scale(1.2); opacity: 0.2; }
+  50% { transform: translate(0%, -50%) scale(1.2); opacity: 0.4; }
+  100% { transform: translate(100%, -50%) scale(1.2); opacity: 0.2; }
+}
+
+@keyframes button-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+  50% { box-shadow: 0 0 18px rgba(255,255,255,0.12); }
+}
+
+.button-primary {
+  animation: button-pulse 3.5s ease-in-out infinite;
 }
 
 .contact-options a:hover {
